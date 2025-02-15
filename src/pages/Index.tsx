@@ -1,4 +1,3 @@
-
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot";
@@ -104,19 +103,21 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-12">Biens à la une</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Location */}
             <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
               <img
-                src="/lovable-uploads/photo-1518005020951-eccb494ad742.jpg"
+                src="/lovable-uploads/89f6d887-4759-4a95-a9e2-8328f8b7cfd7.png"
                 alt="Property"
                 className="w-full h-48 object-cover"
               />
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">Villa Moderne</h3>
-                <p className="text-gray-600 mb-4">Totsivi, Lomé</p>
+                <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">À Louer</span>
+                <h3 className="text-xl font-semibold mt-2">Appartement - Carrefoury</h3>
+                <p className="text-gray-600 mb-4">Lomé, Togo</p>
                 <div className="flex justify-between items-center">
-                  <span className="text-primary font-bold">150,000,000 FCFA</span>
+                  <span className="text-primary font-bold">400,000 FCFA/mois</span>
                   <a
-                    href="https://wa.me/22892455050?text=Je suis intéressé par la Villa Moderne à Totsivi"
+                    href="https://wa.me/22892455050?text=Je suis intéressé par l'appartement à Carrefoury"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-4 py-2 bg-secondary text-white rounded-md hover:bg-secondary/90 transition-colors"
@@ -126,7 +127,56 @@ const Index = () => {
                 </div>
               </div>
             </div>
-            {/* Add more property cards here */}
+
+            {/* Vente Terrain */}
+            <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+              <img
+                src="/lovable-uploads/c826a5bf-80a6-4543-968f-36fe1275afba.png"
+                alt="Property"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <span className="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded">À Vendre</span>
+                <h3 className="text-xl font-semibold mt-2">Terrain - Kpalimé</h3>
+                <p className="text-gray-600 mb-4">10 Ha+</p>
+                <div className="flex justify-between items-center">
+                  <span className="text-primary font-bold">Sur demande</span>
+                  <a
+                    href="https://wa.me/22892455050?text=Je suis intéressé par le terrain de 10Ha+ à Kpalimé"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 bg-secondary text-white rounded-md hover:bg-secondary/90 transition-colors"
+                  >
+                    Contacter
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Villa */}
+            <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+              <img
+                src="/lovable-uploads/7e725a8f-af11-4eaf-9a08-4ecd4be98367.png"
+                alt="Property"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <span className="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded">À Vendre</span>
+                <h3 className="text-xl font-semibold mt-2">Villa - Assigamé</h3>
+                <p className="text-gray-600 mb-4">500M²</p>
+                <div className="flex justify-between items-center">
+                  <span className="text-primary font-bold">Sur demande</span>
+                  <a
+                    href="https://wa.me/22892455050?text=Je suis intéressé par la villa à Assigamé"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 bg-secondary text-white rounded-md hover:bg-secondary/90 transition-colors"
+                  >
+                    Contacter
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
