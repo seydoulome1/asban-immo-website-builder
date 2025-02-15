@@ -1,6 +1,7 @@
 
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import Chatbot from "@/components/Chatbot";
 import { Search, Home, Building2, MapPin } from "lucide-react";
 import { useState } from "react";
 
@@ -14,7 +15,7 @@ const Index = () => {
       
       {/* Hero Section */}
       <section className="relative h-[600px] flex items-center justify-center">
-        <div className="absolute inset-0 bg-[url('/lovable-uploads/cdcc42f5-8697-4dd7-91d3-1e9b437ed77d.png')] bg-cover bg-center">
+        <div className="absolute inset-0 bg-[url('/lovable-uploads/photo-1487958449943-2429e8be8625.jpg')] bg-cover bg-center">
           <div className="absolute inset-0 bg-black/50" />
         </div>
         
@@ -103,10 +104,9 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-12">Biens à la une</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Example Property Card */}
             <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
               <img
-                src="/lovable-uploads/b64f7b14-ee25-40fb-94c4-a4792d10ee17.png"
+                src="/lovable-uploads/photo-1518005020951-eccb494ad742.jpg"
                 alt="Property"
                 className="w-full h-48 object-cover"
               />
@@ -115,17 +115,23 @@ const Index = () => {
                 <p className="text-gray-600 mb-4">Totsivi, Lomé</p>
                 <div className="flex justify-between items-center">
                   <span className="text-primary font-bold">150,000,000 FCFA</span>
-                  <button className="px-4 py-2 bg-secondary text-white rounded-md hover:bg-secondary/90 transition-colors">
-                    Voir détails
-                  </button>
+                  <a
+                    href="https://wa.me/22892455050?text=Je suis intéressé par la Villa Moderne à Totsivi"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 bg-secondary text-white rounded-md hover:bg-secondary/90 transition-colors"
+                  >
+                    Contacter
+                  </a>
                 </div>
               </div>
             </div>
-            {/* Add more property cards as needed */}
+            {/* Add more property cards here */}
           </div>
         </div>
       </section>
 
+      <Chatbot />
       <Footer />
     </div>
   );
