@@ -1,7 +1,7 @@
 
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Mail, MapPin, Phone, WhatsApp } from "lucide-react";
+import { Mail, MapPin, Phone, MessageSquare } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -41,7 +41,7 @@ const Contact = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-secondary text-white px-6 py-3 rounded-lg hover:bg-secondary/90 transition-colors mt-4"
                 >
-                  <WhatsApp className="w-5 h-5" />
+                  <MessageSquare className="w-5 h-5" />
                   Contactez-nous sur WhatsApp
                 </a>
               </div>
