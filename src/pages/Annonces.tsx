@@ -1,65 +1,75 @@
 
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
-import { Search, Building2, Bed, Bath, MapPin } from "lucide-react";
+import Layout from "@/components/Layout";
+import { Search, Building2, MapPin } from "lucide-react";
 import { useState } from "react";
 
-const propertyListings = [
+interface Property {
+  id: number;
+  title: string;
+  location: string;
+  price: string;
+  type: string;
+  details?: string;
+  surface?: string;
+  image: string;
+}
+
+const propertyListings: Property[] = [
   // À Louer
   {
     id: 1,
-    title: "Pièce Terasse",
-    location: "Totsi",
-    price: "15,000",
+    title: "Villa avec piscine",
+    location: "Lomé",
+    price: "1,500,000",
     type: "Location",
-    details: "Pièce avec terasse",
-    image: "/lovable-uploads/89f6d887-4759-4a95-a9e2-8328f8b7cfd7.png",
+    details: "Villa luxueuse avec piscine et jardin",
+    image: "/lovable-uploads/7bbcebef-724d-47fa-972d-293c68d65b87.png",
   },
   {
     id: 2,
-    title: "Chambre salon interne",
-    location: "Gblinkomé",
-    price: "40,000",
+    title: "Maison moderne",
+    location: "Baguida",
+    price: "250,000",
     type: "Location",
-    details: "Chambre salon avec WC interne",
-    image: "/lovable-uploads/89f6d887-4759-4a95-a9e2-8328f8b7cfd7.png",
+    details: "Maison contemporaine avec cour",
+    image: "/lovable-uploads/174b1757-acf6-40e6-a5a0-7bfc9cafca30.png",
   },
   {
     id: 3,
-    title: "2 Chambres salon interne",
-    location: "Avedji",
-    price: "50,000",
+    title: "Résidence avec piscine",
+    location: "Agoe",
+    price: "800,000",
     type: "Location",
-    details: "2 chambres avec salon, WC interne",
-    image: "/lovable-uploads/89f6d887-4759-4a95-a9e2-8328f8b7cfd7.png",
+    details: "Grande résidence avec piscine",
+    image: "/lovable-uploads/dd4f9621-9a2c-4142-8f77-8d2c717ef57c.png",
   },
   // À Vendre
   {
     id: 4,
-    title: "Terrain 1/2 Lot",
-    location: "Baguida",
-    price: "18M",
+    title: "Villa de luxe",
+    location: "Adidogome",
+    price: "450M",
     type: "Vente",
-    surface: "300",
-    image: "/lovable-uploads/c826a5bf-80a6-4543-968f-36fe1275afba.png",
+    surface: "800",
+    image: "/lovable-uploads/d9fef445-796e-42c5-8124-caf978fe549e.png",
   },
   {
     id: 5,
-    title: "Terrain 10Ha+",
-    location: "Kpalimé",
-    price: "Sur demande",
+    title: "Résidence Moderne",
+    location: "Kégué",
+    price: "280M",
     type: "Vente",
-    surface: "100000",
-    image: "/lovable-uploads/c826a5bf-80a6-4543-968f-36fe1275afba.png",
+    surface: "500",
+    image: "/lovable-uploads/753065ab-c0c0-4541-9f47-ae013e2afe80.png",
   },
   {
     id: 6,
-    title: "Villa",
-    location: "Assigamé",
-    price: "500M",
+    title: "Villa avec Piscine",
+    location: "Agoè",
+    price: "350M",
     type: "Vente",
-    surface: "500",
-    image: "/lovable-uploads/7e725a8f-af11-4eaf-9a08-4ecd4be98367.png",
+    surface: "600",
+    image: "/lovable-uploads/cb34db7e-dfd5-4d73-b7d7-aa322d57d921.png",
   },
 ];
 
@@ -77,9 +87,7 @@ const Annonces = () => {
   });
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navigation />
-
+    <Layout>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Search and Filters */}
         <div className="bg-white p-6 rounded-lg shadow-md mb-8">
@@ -137,22 +145,12 @@ const Annonces = () => {
                   <MapPin className="w-4 h-4 mr-1" />
                   {property.location}
                 </p>
-                <div className="flex justify-between items-center mb-4">
-                  <div className="flex space-x-4">
-                    <span className="flex items-center text-gray-600">
-                      <Bed className="w-4 h-4 mr-1" />
-                      {property.bedrooms}
-                    </span>
-                    <span className="flex items-center text-gray-600">
-                      <Bath className="w-4 h-4 mr-1" />
-                      {property.bathrooms}
-                    </span>
-                    <span className="flex items-center text-gray-600">
-                      <Building2 className="w-4 h-4 mr-1" />
-                      {property.surface} m²
-                    </span>
-                  </div>
-                </div>
+                {property.surface && (
+                  <p className="flex items-center text-gray-600 mb-4">
+                    <Building2 className="w-4 h-4 mr-1" />
+                    {property.surface} m²
+                  </p>
+                )}
                 <div className="flex justify-between items-center">
                   <span className="text-primary font-bold">{property.price} FCFA</span>
                   <a
@@ -169,9 +167,7 @@ const Annonces = () => {
           ))}
         </div>
       </div>
-
-      <Footer />
-    </div>
+    </Layout>
   );
 };
 
